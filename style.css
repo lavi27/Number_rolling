@@ -22,20 +22,40 @@ main {
 
 h1 {
     margin: 10px;
-    font-size: 25px;
+    font-size: 35px;
     position: absolute;
-}
-
-div {
-    display: inline;
+    cursor: default;
 }
 
 button {
     margin-top: 10px;
+    font-size: 25px;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
     width: max-content;
 }
 
-.num_roll {
-    font-size: 50px;
+.roll {
+    font-size: 60px;
+    white-space:nowrap;
     overflow: hidden;
+    cursor: default;
+    transition: all 0.6s ease;
+}
+
+.number {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.6s ease;
+}
+
+.drag_none {
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
