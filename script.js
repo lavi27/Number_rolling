@@ -18,7 +18,7 @@ function num_roll(count, num) {
     target.style.height = document.getElementsByClassName("number")[0].clientHeight/10 + "px";
     target.style.width = document.getElementsByClassName("number")[0].clientWidth*num.toString().length + "px";
     for (var i=0; i<num.toString().length; i++) {
-        var pos = Number((num + '').split('')[i]) * (document.getElementsByClassName("number")[0].clientHeight/10);
+        var pos = Number(num.toString().split('')[i]) * (document.getElementsByClassName("number")[0].clientHeight/10);
         document.getElementsByClassName("number")[i].style = "bottom:" + pos + "px";
     }
 }
@@ -29,4 +29,12 @@ function random_num() {
 
 window.addEventListener('DOMContentLoaded', function() {
     num_roll(1, "0123456789");
+    
+    var textarea = document.querySelector("textarea");
+    textarea.addEventListener('input', function(event) {
+    if(event.inputType == "insertLineBreak") {
+        num_roll(1, textarea.value.toString().trim());
+        textarea.value = "";
+    }
+});
 });

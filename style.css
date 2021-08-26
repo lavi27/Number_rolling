@@ -27,6 +27,20 @@ h1 {
     cursor: default;
 }
 
+#name {
+    margin: 60px 0px 0px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #818181;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#name:hover {
+    text-decoration: underline;
+}
+
 button {
     margin-top: 10px;
     font-size: 25px;
@@ -35,6 +49,18 @@ button {
     cursor: pointer;
     border: none;
     width: max-content;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+    overflow: shidden;
+    margin-top: 20px;
+    width: 400px;
+    height: 44px;
+    font-size: 30px;
+    padding: 0px;
+    border: #000000 8px solid;
 }
 
 .roll {
