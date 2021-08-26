@@ -16,7 +16,7 @@ function num_roll(count, num) {
         }
     }
     target.style.height = document.getElementsByClassName("number")[0].clientHeight/10 + "px";
-    target.style.width = document.getElementsByClassName("number")[0].clientWidth*num.toString().length + "px";
+    target.style.width = document.getElementsByClassName("number")[0].clientWidth*num.toString().length+3 + "px";
     for (var i=0; i<num.toString().length; i++) {
         var pos = Number(num.toString().split('')[i]) * (document.getElementsByClassName("number")[0].clientHeight/10);
         document.getElementsByClassName("number")[i].style = "bottom:" + pos + "px";
