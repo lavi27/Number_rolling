@@ -75,7 +75,7 @@ button {
 textarea {
     outline: none;
     resize: none;
-    overflow: shidden;
+    overflow: hidden;
     margin-top: 20px;
     width: 400px;
     height: 44px;
