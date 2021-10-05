@@ -1,25 +1,26 @@
-function num_roll(count, num) {
+inputstr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+function num_roll(count, str) {
     var target = document.getElementById("roll_" + count);
     var childcount = target.childElementCount;
-    if(num.toString().length > childcount) {
-        for (var i=0; i<num.toString().length - childcount; i++) {
+    var textheight = parseInt(getComputedStyle(target).fontSize.replace("px", ""));
+
+    if(str.toString().length > childcount) {
+        for (var i=0; i<str.toString().length - childcount; i++) {
             var content = "<div class='number' style='bottom:0px'>";
-            for (var l=0; l<10; l++) {
-                content += "<a>" + l + "</a>";
+            for (var l=0; l<inputstr.length; l++) {
+                content += "<a style='height:1em'>" + inputstr[l] + "</a>";
             }
             content += "</div>";
             target.innerHTML += content;
         }
-    } else if(num.toString().length < childcount) {
-        for(var i=0; i < childcount - num.toString().length; i++) {
-            document.getElementsByClassName("number")[target.childElementCount-1].remove();
-        }
     }
-    target.style.height = document.getElementsByClassName("number")[0].clientHeight/10 + "px";
-    target.style.width = document.getElementsByClassName("number")[0].clientWidth*num.toString().length+3 + "px";
-    for (var i=0; i<num.toString().length; i++) {
-        var pos = Number(num.toString().split('')[i]) * (document.getElementsByClassName("number")[0].clientHeight/10);
-        document.getElementsByClassName("number")[i].style = "bottom:" + pos + "px";
+
+    target.style.height = "1em";
+    target.style.width = target.childNodes[count-1].clientWidth*str.toString().length + "px";
+    for (var i=0; i<str.toString().length; i++) {
+        var pos = inputstr.indexOf(str.toString().split('')[i]);
+        target.childNodes[i].style = "bottom:" + ((textheight*pos)+4) + "px";
     }
 }
 

@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-
-* {
-    font-family: 'Noto Sans KR', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
 body {
     margin: 0px;
     width: 100%;
     height: 100vh;
+    background-color: #000000;
 }
 
 main {
@@ -21,6 +19,7 @@ main {
 }
 
 h1 {
+    color: #ffffff;
     margin: 10px 0px 0px 10px;
     font-size: 45px;
     cursor: default;
@@ -28,6 +27,7 @@ h1 {
 
 #title {
     position: absolute;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 #name {
@@ -53,43 +53,77 @@ h1 {
     }
 }
 
-@media (max-width: 370px) {
-    .roll {
-    }
-}
-
 #name:hover {
     text-decoration: underline;
 }
 
 button {
     margin-top: 10px;
-    font-size: 25px;
-    background-color: #000000;
-    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
     cursor: pointer;
     border: none;
     width: max-content;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 textarea {
     outline: none;
     resize: none;
     overflow: hidden;
+    border-radius: 20px;
     margin-top: 20px;
     width: 400px;
     height: 44px;
     font-size: 30px;
     padding: 0px;
-    border: #000000 8px solid;
+    border: #ffffff 8px solid;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.or {
+    color: #818181;
 }
 
 .roll {
+    color: #ffffff;
+    border: solid 6px #000000;
+    border-top: 0px;
+    border-bottom: 0px;
     font-size: 60px;
+    display: flex;
+    font-family: 'Black Han Sans', sans-serif;
     white-space:nowrap;
     overflow: hidden;
     cursor: default;
     transition: all 0.6s ease;
+}
+
+.roll_outline {
+    border: solid 2px #7c7c7c;
+    border-radius: 17px;
+    overflow: hidden;
+    position: relative;
+}
+
+.shadow1 {
+    width: 100%;
+    height: 20px;
+    z-index: 3;
+    position: absolute;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) );
+}
+
+.shadow2 {
+    width: 100%;
+    height: 20px;
+    z-index: 3;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) );
 }
 
 .number {
